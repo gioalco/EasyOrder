@@ -146,6 +146,14 @@
             vertical-align: top;
         }
 
+        .review img {
+            padding-bottom: 0.75em;
+        }
+
+        .review p {
+            padding-bottom: 0.5em;
+        }
+
         @media screen and (max-width: 600px) {
             .review-container {
                 display: flex;
@@ -212,22 +220,12 @@
         <h2>What Our Customers Say</h2>
         <div class="review-container">
             <div class="review">
+                <img src="https://placehold.co/80" alt="Person"></img>
                 <p>"The best food I've had all year!"</p>
                 <span>★★★★★</span>
             </div>
             <div class="review">
+                <img src="https://placehold.co/80" alt="Person"></img>
                 <p>"Fast delivery and delicious meals!"</p>
                 <span>★★★★★</span>
-            </div>
-            <div class="review">
-                <p>"A dining experience to remember!"</p>
-                <span>★★★★★</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer-component></footer-component>
-
-</body>
-</html>
+       
