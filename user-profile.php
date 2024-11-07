@@ -18,22 +18,23 @@
             font-family: Arial, sans-serif;
             color: #333;
             background-color: #f4f4f4;
-            background-image: url('about-bg.jpg'); /* Replace with actual image */
+        }
+
+        .background {
+            background-image: url('about-bg.jpg');
             background-size: cover;
             background-position: center;
-            height: 500px;
-            justify-content: center;
-            align-items: center;
         }
 
         /* Profile Container */
         .profile-container {
+            width: 90%;
             max-width: 500px;
-            margin: 40px auto;
+            margin: 5em auto 2em ;
             padding: 20px;
             background: #fff;
             border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
         }
 
         h2 {
@@ -71,10 +72,23 @@
         button:hover {
             background-color: #555;
         }
+
+        @media screen and (min-height: 840px) {
+            .background {
+                height: 100lvh;
+            }
+            footer-component {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
+<section class="background">
     <header-component></header-component>
 
     <!-- Profile Management Section -->
@@ -106,6 +120,7 @@
     </div>
 
     <footer-component></footer-component>
+    </section>
 
     <!-- JavaScript to handle form save -->
     <script>
