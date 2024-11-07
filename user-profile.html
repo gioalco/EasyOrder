@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile | EasyOrder Restaurant</title>
+    <script src="components/header.js" defer></script>
+
     <style>
         /* Basic reset */
         * {
@@ -22,32 +24,6 @@
             height: 500px;
             justify-content: center;
             align-items: center;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 24px;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #FF6347;
         }
 
         /* Profile Container */
@@ -119,17 +95,7 @@
 <body>
 
     <!-- Header -->
-    <header>
-        <h1>EasyOrder Restaurant</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="restaurant.html">Restaurant</a>
-            <a href="order.html">Order Online</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="about-us.html">About Us</a>
-            <a href="user-profile.html">Profile</a>
-        </nav>
-    </header>
+<header-component></header-component>
 
     <!-- Profile Management Section -->
     <div class="profile-container">
@@ -172,6 +138,16 @@
 
     <!-- JavaScript to handle form save -->
     <script>
+        function showSidebar(){    
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+        
         function saveProfile() {
             const fullName = document.getElementById("full_name").value;
             const phone = document.getElementById("phone").value;
@@ -182,6 +158,5 @@
             alert(`Profile Updated:\n\nFull Name: ${fullName}\nPhone: ${phone}\nAddress: ${address}\nBio: ${bio}`);
         }
     </script>
-
 </body>
 </html>
