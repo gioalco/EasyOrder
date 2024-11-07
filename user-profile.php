@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile | EasyOrder Restaurant</title>
+    <link rel="stylesheet" href="style.css"></link>
     <script src="components/header.js" defer></script>
     <script src="components/footer.js" defer></script>
     <style>
@@ -18,12 +19,6 @@
             font-family: Arial, sans-serif;
             color: #333;
             background-color: #f4f4f4;
-        }
-
-        .background {
-            background-image: url('about-bg.jpg');
-            background-size: cover;
-            background-position: center;
         }
 
         /* Profile Container */
@@ -73,17 +68,6 @@
             background-color: #555;
         }
 
-        @media screen and (min-height: 840px) {
-            .background {
-                height: 100lvh;
-            }
-            footer-component {
-                position: fixed;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-        }
     </style>
 </head>
 <body>

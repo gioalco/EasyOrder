@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - EasyOrder Restaurant</title>
+    <link rel="stylesheet" href="style.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="components/header.js" defer></script>
     <script src="components/footer.js" defer></script>
@@ -19,20 +20,9 @@
             font-family: Arial, sans-serif;
             color: #333;
             background-color: #f4f4f4;
-            background-image: url('about-bg.jpg'); /* Replace with actual image */
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero {
 
             justify-content: center;
             align-items: center;
-            color: white;
-            text-align: center;
         }
 
         /* About Us Content Box */
@@ -62,12 +52,17 @@
             justify-content: center;
             padding: 40px 20px;
             background-color: #fff;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 30px;
         }
 
         .mission-item {
-            width: 30%;
+            /*width: 30%;*/
+            width: 45ch;
             text-align: center;
             margin: 0 20px;
+            line-height: 1.6;
         }
 
         .mission-item img {
@@ -89,7 +84,7 @@
     </style>
 </head>
 <body>
-
+<section class="background">
     <header-component></header-component>
 
     <!-- About Us Section -->
@@ -128,6 +123,6 @@
     </section>
 
     <footer-component></footer-component>
-
+</section>
 </body>
 </html>
