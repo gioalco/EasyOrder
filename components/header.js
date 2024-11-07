@@ -128,16 +128,27 @@ headerTemplate.innerHTML = `
                 <li><a href="user-profile.html">Profile</a></li>
             </ul>
             <ul>
-                <li class = "hideOnMobile"><a href="index.html">Home</a></li>
-                <li class = "hideOnMobile"><a href="restaurant.html">Restaurant</a></li>
-                <li class = "hideOnMobile"><a href="order.html">Order Online</a></li>
-                <li class = "hideOnMobile"><a href="contact.html">Contact Us</a></li>
-                <li class = "hideOnMobile"><a href="about-us.html">About Us</a></li>
-                <li class = "hideOnMobile"><a href="user-profile.html">Profile</a></li>
+                <li class = "hideOnMobile"><a href="/index.php">Home</a></li>
+                <li class = "hideOnMobile"><a href="/restaurant.php">Restaurant</a></li>
+                <li class = "hideOnMobile"><a href="/order.php">Order Online</a></li>
+                <li class = "hideOnMobile"><a href="/contact.php">Contact Us</a></li>
+                <li class = "hideOnMobile"><a href="/about-us.php">About Us</a></li>
+                <li class = "hideOnMobile"><a href="/user-profile.php">Profile</a></li>
                 <li class = "menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
         </nav>
     </header>
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
 `;
 
 class Header extends HTMLElement {
