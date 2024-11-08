@@ -220,12 +220,25 @@
         <h2>What Our Customers Say</h2>
         <div class="review-container">
             <div class="review">
-                <img src="https://placehold.co/80" alt="Person"></img>
+                <img src="https://placehold.co/80" alt="Person">
                 <p>"The best food I've had all year!"</p>
                 <span>★★★★★</span>
             </div>
             <div class="review">
-                <img src="https://placehold.co/80" alt="Person"></img>
+                <img src="https://placehold.co/80" alt="Person">
                 <p>"Fast delivery and delicious meals!"</p>
                 <span>★★★★★</span>
-       
+            </div>
+            <div class="review">
+                <img src="https://placehold.co/80" alt="Person">
+                <p>"A dining experience to remember!"</p>
+                <span>★★★★★</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer-component></footer-component>
+
+</body>
+</html>

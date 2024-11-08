@@ -25,10 +25,10 @@ footerTemplate.innerHTML = `
     <footer>
         <p>&copy; 2024 EasyOrder Restaurant</p>
         <div>
-            <a href="index.html">Home</a> |
-            <a href="menu.html">Menu</a> |
-            <a href="order.html">Order Online</a> |
-            <a href="contact.html">Contact Us</a>
+            <a href="/index.php">Home</a> |
+            <a href="/menu.php">Menu</a> |
+            <a href="/order.php">Order Online</a> |
+            <a href="/contact.php">Contact Us</a>
         </div>
     </footer>
 `;
