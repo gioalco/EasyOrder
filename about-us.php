@@ -6,8 +6,10 @@
     <title>About Us - EasyOrder Restaurant</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="css/header.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
     <style>
         /* Basic reset */
         * {
@@ -27,7 +29,7 @@
 
         /* About Us Content Box */
         .about-container {
-            max-width: 800px;
+            width: min(800px, 90%);
             margin: 50px auto;
             padding: 30px;
             background: white;
@@ -44,22 +46,22 @@
         .about-container p {
             margin: 15px 0;
             line-height: 1.6;
+            text-align: justify;
         }
 
         /* Mission and Values Section */
         .mission-values {
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 3em 1em;
             background-color: #fff;
-            width: 80%;
-            margin: 0 auto;
-            border-radius: 30px;
+            width: min(800px, 90%);
+            margin: 0 auto 2em;
+            border-radius: 8px;
         }
 
         .mission-item {
-            /*width: 30%;*/
-            width: 45ch;
+            width: min(45ch, 100%);
             text-align: center;
             margin: 0 20px;
             line-height: 1.6;
@@ -81,6 +83,19 @@
             color: #666;
         }
 
+        @media screen and (max-width: 805px) {
+            .mission-values {
+                flex-direction: column;
+                align-items: center;
+                gap: 2em;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            * {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
@@ -123,8 +138,9 @@
             </p>
         </div>
     </section>
+</section>
 
     <footer-component></footer-component>
-</section>
+
 </body>
 </html>

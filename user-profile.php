@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile | EasyOrder Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
     <style>
         /* Basic reset */
         * {
@@ -33,7 +35,7 @@
             padding: 20px;
             background: #fff;
             border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
         }
 
         h2 {
@@ -94,6 +96,8 @@
 </head>
 <body>
 
+    <section class="background">
+
     <?php
         include('components/header.php');
     ?>
@@ -125,17 +129,9 @@
             <button type="button" onclick="saveProfile()">Save Profile</button>
         </form>
     </div>
+    </section>
+    <footer-component></footer-component>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 EasyOrder Restaurant</p>
-        <div>
-            <a href="index.html">Home</a> |
-            <a href="menu.html">Menu</a> |
-            <a href="order.html">Order Online</a> |
-            <a href="contact.html">Contact Us</a>
-        </div>
-    </footer>
 
     <!-- JavaScript to handle form save -->
     <script>
