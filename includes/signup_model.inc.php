@@ -1,6 +1,6 @@
 <?php
 
-//declare(strict_types=1);
+declare(strict_types=1);
 
 function get_username($pdo, $username) {
     $query = "SELECT username FROM users WHERE username = :username;";
