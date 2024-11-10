@@ -1,0 +1,17 @@
+.background {
+    background-image: url('../img/about-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (min-height: 1000px) {
+    .background {
+        height: calc(100lvh - 109px);
+    }
+    /*footer-component {*/
+    /*    position: fixed;*/
+    /*    left: 0;*/
+    /*    right: 0;*/
+    /*    bottom: 0;*/
+    /*}*/
+}

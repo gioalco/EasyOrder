@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile | EasyOrder Restaurant</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="components/header.js" defer></script>
-    <script src="components/footer.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
     <style>
         /* Basic reset */
         * {
@@ -19,13 +20,18 @@
             font-family: Arial, sans-serif;
             color: #333;
             background-color: #f4f4f4;
+            background-image: url('img/about-bg.jpg'); /* Replace with actual image */
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Profile Container */
         .profile-container {
-            width: 90%;
             max-width: 500px;
-            margin: 5em auto 2em ;
+            margin: 40px auto;
             padding: 20px;
             background: #fff;
             border-radius: 5px;
@@ -68,12 +74,33 @@
             background-color: #555;
         }
 
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FF6347;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #e55341;
+        }
     </style>
 </head>
 <body>
 
-<section class="background">
-    <header-component></header-component>
+    <section class="background">
+
+    <?php
+        include('components/header.php');
+    ?>
 
     <!-- Profile Management Section -->
     <div class="profile-container">
@@ -102,9 +129,9 @@
             <button type="button" onclick="saveProfile()">Save Profile</button>
         </form>
     </div>
-
-    <footer-component></footer-component>
     </section>
+    <footer-component></footer-component>
+
 
     <!-- JavaScript to handle form save -->
     <script>

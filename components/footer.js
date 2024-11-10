@@ -26,9 +26,11 @@ footerTemplate.innerHTML = `
         <p>&copy; 2024 EasyOrder Restaurant</p>
         <div>
             <a href="/index.php">Home</a> |
-            <a href="/menu.php">Menu</a> |
-            <a href="/order.php">Order Online</a> |
-            <a href="/contact.php">Contact Us</a>
+            <a href="/about-us.php">About Us</a> |
+            <a href="/user-profile.php">Profile</a> 
+<!--            <a href="/signin.php">Sign in / Sign up</a> -->
+<!--            <a href="/#">Order Online</a> |-->
+<!--            <a href="/contact.php">Contact Us</a>-->
         </div>
     </footer>
 `;
