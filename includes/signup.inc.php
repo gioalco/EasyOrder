@@ -1,5 +1,6 @@
 <?php
 
+global $pdo;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $username = $_POST["username"];
@@ -32,8 +33,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if (($errors)) {
             $_SESSION["errors_signup"] = $errors;
+
+            $signupData = [
+                "username" => $username,
+                "email" => $email
+            ];
+            $_SESSION["signup_data"] = $signupData;
+
             header("Location: ../signin.php");
+            die();
         }
+
+        create_user($pdo, $pwd, $username, $email);
+        header("Location: ../signin.php?signup=success");
+
+        $pdo = null;
+        $stmt = null;
+
+
+        die();
 
 
 
@@ -42,6 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Query failed: ". $e->getMessage());
     }
 } else {
-    header("Location: ../index.php");
+    header("Location: ../signin.php");
     die();
 }

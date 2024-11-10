@@ -160,9 +160,9 @@ require_once 'includes/signup_view.inc.php';
             <!-- Sign Up Form -->
             <form id="sign-up-form" action="includes/signup.inc.php" method="post">
                 <h3>Sign Up</h3>
-                <input type="text" name="username" placeholder="Username">
-                <input type="text" name="email" placeholder="Email">
-                <input type="password" name="pwd"  placeholder="Password">
+                <?php
+                    signup_inputs()
+                ?>
                 <button type="submit">Sign Up</button>
             </form>
 
