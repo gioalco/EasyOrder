@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyOrder Restaurant - Sign In / Sign Up</title>
-    <script src="components/header.js" defer></script>
-    <script src="components/footer.js" defer></script>
+    <link rel="stylesheet" href="css/header.css">
+    <script src="components/header.js"></script>
     <style>
         /* Basic reset */
         * {
@@ -22,7 +22,7 @@
 
         /* Hero Section */
         .hero {
-            background-image: url('restaurant.jpg'); /* Replace with actual image */
+            background-image: url('img/restaurant.jpg'); /* Replace with actual image */
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -126,7 +126,9 @@
     </style>
 </head>
 <body>
-    <header-component></header-component>
+    <?php
+        include('components/header.php');
+    ?>
 
     <!-- Hero Section -->
     <section class="hero">

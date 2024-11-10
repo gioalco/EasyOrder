@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile | EasyOrder Restaurant</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="components/header.js" defer></script>
-    <script src="components/footer.js" defer></script>
+    <link rel="stylesheet" href="css/header.css">
+    <script src="components/header.js"></script>
     <style>
         /* Basic reset */
         * {
@@ -19,17 +18,22 @@
             font-family: Arial, sans-serif;
             color: #333;
             background-color: #f4f4f4;
+            background-image: url('img/about-bg.jpg'); /* Replace with actual image */
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Profile Container */
         .profile-container {
-            width: 90%;
             max-width: 500px;
-            margin: 5em auto 2em ;
+            margin: 40px auto;
             padding: 20px;
             background: #fff;
             border-radius: 5px;
-            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
 
         h2 {
@@ -68,12 +72,31 @@
             background-color: #555;
         }
 
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FF6347;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #e55341;
+        }
     </style>
 </head>
 <body>
 
-<section class="background">
-    <header-component></header-component>
+    <?php
+        include('components/header.php');
+    ?>
 
     <!-- Profile Management Section -->
     <div class="profile-container">
@@ -103,8 +126,16 @@
         </form>
     </div>
 
-    <footer-component></footer-component>
-    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EasyOrder Restaurant</p>
+        <div>
+            <a href="index.html">Home</a> |
+            <a href="menu.html">Menu</a> |
+            <a href="order.html">Order Online</a> |
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </footer>
 
     <!-- JavaScript to handle form save -->
     <script>

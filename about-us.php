@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - EasyOrder Restaurant</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="components/header.js" defer></script>
-    <script src="components/footer.js" defer></script>
+    <link href="css/header.css" rel="stylesheet">
+    <script src="components/header.js"></script>
     <style>
         /* Basic reset */
         * {
@@ -85,7 +85,9 @@
 </head>
 <body>
 <section class="background">
-    <header-component></header-component>
+    <?php
+        include('components/header.php');
+    ?>
 
     <!-- About Us Section -->
     <section class="about-container">
