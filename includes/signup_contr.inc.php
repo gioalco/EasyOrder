@@ -2,10 +2,10 @@
 
 // contr stands for Controller as MVC pattern
 
-//declare(strict_types=1);
+declare(strict_types=1);
 
-function is_input_empty($email, $pwd) {
-    if (empty($email) || empty($pwd)) {
+function is_input_empty(string $username, string $email, string $pwd) {
+    if ( empty($username) || empty($email) || empty($pwd)) {
         return true;
     }
     else {
@@ -13,7 +13,7 @@ function is_input_empty($email, $pwd) {
     }
 }
 
-function is_email_invalid($email) {
+function is_email_invalid(string $email) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return true;
     }
@@ -22,7 +22,7 @@ function is_email_invalid($email) {
     }
 }
 
-function is_username_taken($pdo, $username) {
+function is_username_taken(object $pdo, string $username) {
     if (get_username($pdo, $username)) {
         return true;
     }
@@ -31,7 +31,7 @@ function is_username_taken($pdo, $username) {
     }
 }
 
-function is_email_registered($pdo, $email) {
+function is_email_registered(object $pdo, string $email) {
     if (get_email($pdo, $email)) {
         return true;
     }
@@ -40,7 +40,7 @@ function is_email_registered($pdo, $email) {
     }
 }
 
-function create_user($pdo, $pwd, $username, $email) {
+function create_user(object $pdo, string $pwd, string $username, string $email) {
     set_user($pdo, $pwd, $username, $email);
 }
 
