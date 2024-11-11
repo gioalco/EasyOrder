@@ -140,7 +140,7 @@ require_once 'includes/login_view.inc.php';
 </head>
 <body>
     <?php
-        include('components/header.php');
+        include('components/header-public.php');
     ?>
 
     <!-- Hero Section -->
@@ -152,7 +152,7 @@ require_once 'includes/login_view.inc.php';
     </section>
 
     <!-- Form Section -->
-    <section class="form-section">
+    <section class="form-section" id="form-section">
         <h2>Sign In / Sign Up</h2>
         <div class="form-container">
             <!-- Sign In Form -->
@@ -198,10 +198,6 @@ require_once 'includes/login_view.inc.php';
             <span>★★★★★</span>
         </div>
     </section>
-
-    <form action="includes/logout.inc.php" method="post">
-        <button>Logout</button>
-    </form>
 
     <footer-component></footer-component>
 

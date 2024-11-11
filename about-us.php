@@ -101,7 +101,7 @@
 <body>
 <section class="background">
     <?php
-        include('components/header.php');
+        include('components/header-public.php');
     ?>
 
     <!-- About Us Section -->
