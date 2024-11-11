@@ -1,5 +1,6 @@
 <?php
-
+# SIGNUP CONTROLLER
+# INC stands for includes directory
 declare(strict_types=1);
 
 function is_input_empty(string $username, string $pwd, string $email)
