@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/config_session.inc.php';
 require_once 'includes/signup_view.inc.php';
+require_once 'includes/login_view.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -114,6 +115,11 @@ require_once 'includes/signup_view.inc.php';
             background-color: #e5533d; /* Darker shade on hover */
         }
 
+        .form-error {
+            color: gray;
+            text-align: right;
+        }
+
         /* Reviews Section */
         .reviews {
             padding: 40px;
@@ -150,25 +156,29 @@ require_once 'includes/signup_view.inc.php';
         <h2>Sign In / Sign Up</h2>
         <div class="form-container">
             <!-- Sign In Form -->
-            <form id="sign-in-form" action="includes/signin.inc.php" method="post">
+            <form id="sign-in-form" action="includes/login.inc.php" method="post">
                 <h3>Sign In</h3>
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="pwd"  placeholder="Password">
                 <button type="submit">Sign In</button>
+                <p class="form-error"><?php check_login_errors(); ?></p>
             </form>
+
+
+
 
             <!-- Sign Up Form -->
             <form id="sign-up-form" action="includes/signup.inc.php" method="post">
                 <h3>Sign Up</h3>
                 <?php
-                    signup_inputs()
+                    signup_inputs();
                 ?>
                 <button type="submit">Sign Up</button>
+                <p class="form-error"><?php check_signup_errors(); ?></p>
             </form>
 
-            <?php
-            check_signup_errors();
-            ?>
+
+
         </div>
     </section>
 
@@ -188,6 +198,10 @@ require_once 'includes/signup_view.inc.php';
             <span>★★★★★</span>
         </div>
     </section>
+
+    <form action="includes/logout.inc.php" method="post">
+        <button>Logout</button>
+    </form>
 
     <footer-component></footer-component>
 
