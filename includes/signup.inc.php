@@ -1,11 +1,10 @@
 <?php
 
-global $pdo;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $username = $_POST["username"];
-    $email = $_POST["email"];
     $pwd = $_POST["pwd"];
+    $email = $_POST["email"];
 
     try {
 
@@ -16,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // ERROR HANDLERS
         $errors = [];
 
-        if (is_input_empty($email, $pwd)) {
+        if (is_input_empty($username, $pwd, $email)) {
             $errors["empty_input"] = "Fill in all fields!";
         }
         if (is_email_invalid($email)) {
@@ -31,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         require_once 'config_session.inc.php';
 
-        if (($errors)) {
+        if ($errors) {
             $_SESSION["errors_signup"] = $errors;
 
             $signupData = [
@@ -45,19 +44,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         create_user($pdo, $pwd, $username, $email);
+
         header("Location: ../signin.php?signup=success");
 
         $pdo = null;
         $stmt = null;
 
-
         die();
-
-
-
-
-    } catch (PDOException $e){
-        die("Query failed: ". $e->getMessage());
+    } catch (PDOException $e) {
+        die("Query failed: " . $e->getMessage());
     }
 } else {
     header("Location: ../signin.php");
