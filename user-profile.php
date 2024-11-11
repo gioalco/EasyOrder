@@ -51,7 +51,7 @@
             font-weight: bold;
         }
 
-        input, textarea {
+        input[type=text], textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -99,7 +99,7 @@
     <section class="background">
 
     <?php
-        include('components/header.php');
+        include('components/header-user.php');
     ?>
 
     <!-- Profile Management Section -->

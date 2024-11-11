@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ];
             $_SESSION["signup_data"] = $signupData;
 
-            header("Location: ../signin.php");
+            header("Location: ../signin.php#form-section");
             die();
         }
 
@@ -56,6 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Query failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../signin.php");
+    header("Location: ../signin.php#form-section");
     die();
 }
