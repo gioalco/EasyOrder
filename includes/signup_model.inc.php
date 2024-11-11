@@ -1,10 +1,11 @@
 <?php
+# INC stands for includes directory
 
 declare(strict_types=1);
 
 function get_username(object $pdo, string $username)
 {
-    $query = "SELECT username FROM users WHERE username = :username;";
+    $query = "SELECT username FROM person WHERE username = :username;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":username", $username);
     $stmt->execute();
@@ -15,7 +16,7 @@ function get_username(object $pdo, string $username)
 
 function get_email(object $pdo, string $email)
 {
-    $query = "SELECT username FROM users WHERE email = :email;";
+    $query = "SELECT username FROM person WHERE email = :email;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":email", $email);
     $stmt->execute();
@@ -26,7 +27,7 @@ function get_email(object $pdo, string $email)
 
 function set_user(object $pdo, string $pwd, string $username, string $email)
 {
-    $query = "INSERT INTO users (username, pwd, email) VALUES (:username, :pwd, :email);";
+    $query = "INSERT INTO person (username, pwd, email) VALUES (:username, :pwd, :email);";
     $stmt = $pdo->prepare($query);
 
     $options = [

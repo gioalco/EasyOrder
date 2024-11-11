@@ -1,4 +1,5 @@
 <?php
+# INC stands for includes directory
 
 declare(strict_types=1);
 

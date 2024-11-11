@@ -1,4 +1,5 @@
 <?php
+# INC stands for includes directory
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 

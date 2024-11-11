@@ -1,4 +1,5 @@
 <?php
+# INC stands for includes directory
 
 session_start();
 session_unset();

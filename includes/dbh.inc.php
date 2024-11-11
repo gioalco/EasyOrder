@@ -1,7 +1,9 @@
 <?php
+# DATABASE HANDLER
+# INC stands for includes directory
 
 $host = 'localhost';
-$dbname = 'myfirstdatabase';
+$dbname = 'EasyOrder';
 $dbusername = 'root';
 $dbpassword = '';
 

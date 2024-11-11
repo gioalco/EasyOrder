@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS EasyOrder;
+USE EasyOrder;
+
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE person (
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(30) NOT NULL,
+    pwd VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+#     authority ENUM('user', 'admin'),
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+  );
+
