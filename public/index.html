@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .response-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Food Finder</h1>
+    <p>Hi, I'm Sam! I can help you find food based on your mood and budget. Let's get started!</p>
+
+    <form id="foodForm">
+        <label for="feeling">What are you feeling to eat today?</label><br>
+        <input type="text" id="feeling" name="feeling" required><br><br>
+
+        <label for="budget">What's your budget in PHP?</label><br>
+        <input type="number" id="budget" name="budget" required><br><br>
+
+        <button type="submit">Get Food Options</button>
+    </form>
+
+    <div class="response-box" id="responseBox" style="display: none;"></div>
+</div>
+
+<script>
+    document.getElementById('foodForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const feeling = document.getElementById('feeling').value;
+        const budget = document.getElementById('budget').value;
+
+        // Show loading message
+        const responseBox = document.getElementById('responseBox');
+        responseBox.style.display = 'none';
+        responseBox.innerHTML = "Finding food options for you...";
+
+        try {
+            // Send the data to the server
+            const response = await fetch('/generate-food-options', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ feeling, budget })
+            });
+
+            const result = await response.json();
+            responseBox.style.display = 'block';
+
+            // Use innerHTML to render the HTML response with line breaks
+            responseBox.innerHTML = result.response;
+        } catch (error) {
+            responseBox.style.display = 'block';
+            responseBox.innerHTML = "Sorry, there was an error finding food options. Please try again later.";
+        }
+    });
+</script>
+
+</body>
+</html>
