@@ -164,9 +164,6 @@ require_once 'includes/login_view.inc.php';
                 <p class="form-error"><?php check_login_errors(); ?></p>
             </form>
 
-
-
-
             <!-- Sign Up Form -->
             <form id="sign-up-form" action="includes/signup.inc.php" method="post">
                 <h3>Sign Up</h3>
@@ -176,8 +173,6 @@ require_once 'includes/login_view.inc.php';
                 <button type="submit">Sign Up</button>
                 <p class="form-error"><?php check_signup_errors(); ?></p>
             </form>
-
-
 
         </div>
     </section>
