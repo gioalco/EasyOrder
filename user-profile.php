@@ -95,9 +95,7 @@
     </style>
 </head>
 <body>
-
     <section class="background">
-
     <?php
         include('components/header-user.php');
     ?>
@@ -131,7 +129,6 @@
     </div>
     </section>
     <footer-component></footer-component>
-
 
     <!-- JavaScript to handle form save -->
     <script>
