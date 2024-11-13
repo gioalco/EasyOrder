@@ -23,7 +23,7 @@
 
         /* Hero Section */
         .hero {
-            background-image: url('https://placehold.co/1920x1080'); /* Replace with actual image */
+            background-image: url("img/about-bg.jpg"); /* Replace with actual image */
             background-size: cover;
             background-position: center;
             height: 500px;

@@ -1,13 +1,20 @@
+// node --version # Should be >= 18
+// npm install express @google/generative-ai dotenv
+
 const express = require('express');
-const bodyParser = require('body-parser');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
+const dotenv = require('dotenv').config();
 
-const apiKey = process.env.GEMINI_API_KEY; // Ensure to set your API key in environment
-const genAI = new GoogleGenerativeAI(apiKey);
+const app = express();
+const port = process.env.PORT || 3000;
+app.use(express.static('public')); // Serve static files from 'public' folder
+app.use(express.json());
 
+const API_KEY = process.env.GEMINI_API_KEY;
+const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
-    systemInstruction: "Your name is Sam, a friendly assistant who helps users to find food.  First, you will introduce yourself and creatively ask the user 'What are you feeling to eat today?'. Then ask about the budget and suggest foods from specific restaurants in the Philippines.\n",
+    model: 'gemini-1.5-flash',
+    systemInstruction: `Your name is Sam, a friendly assistant who helps users to find food. First, you will introduce yourself and creatively ask the user "What are you feeling to eat today?". Then after the user input, ask "How much is your budget?". Based on their response, suggest 3 food items with prices from the following restaurants: Jolibee, Chowking, Mang Inasal, Greenwich Pizza.`,
 });
 
 const generationConfig = {
@@ -15,47 +22,40 @@ const generationConfig = {
     topP: 0.95,
     topK: 40,
     maxOutputTokens: 8192,
-    responseMimeType: "text/plain",
+    responseMimeType: 'text/plain',
 };
 
-const app = express();
-const port = 3000;
+async function getFoodSuggestions(userInput) {
+    const chatSession = model.startChat({
+        generationConfig,
+        history: [
+            { role: 'user', parts: [{ text: 'Hi' }] },
+            { role: 'model', parts: [{ text: 'Hey there! 👋 I\'m Sam, your friendly food finder. What are you feeling to eat today? 😋' }] },
+            { role: 'user', parts: [{ text: userInput.foodMood }] },
+            { role: 'model', parts: [{ text: 'Got it! How much is your budget for this delicious adventure? (in PHP)' }] },
+            { role: 'user', parts: [{ text: userInput.budget }] },
+        ],
+    });
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+    const result = await chatSession.sendMessage(userInput.budget);
+    return result.response.text();
+}
 
-// Serve static files (like HTML, CSS, JS)
-app.use(express.static('public'));
-
-app.post('/generate-food-options', async (req, res) => {
+app.post('/chat', async (req, res) => {
     try {
-        const { feeling, budget } = req.body;
+        const userInput = req.body;
+        if (!userInput.foodMood || !userInput.budget) {
+            return res.status(400).json({ error: 'Please provide both food mood and budget.' });
+        }
 
-        const chatSession = model.startChat({
-            generationConfig,
-            history: [
-                { role: "user", parts: [{ text: "Hi" }] },
-                { role: "model", parts: [{ text: "Hey there! 👋 I'm Sam, your friendly food finder. What are you feeling to eat today? 😋" }] },
-                { role: "user", parts: [{ text: feeling }] },
-                { role: "model", parts: [{ text: `Got it, you're feeling ${feeling}! How much is your budget for this delicious adventure?` }] },
-                { role: "user", parts: [{ text: budget }] },
-            ],
-        });
-
-        const result = await chatSession.sendMessage("INSERT_INPUT_HERE");
-        let responseText = result.response.text();
-
-        // Replace newlines with <br> for proper HTML line breaks
-        responseText = responseText.replace(/\n/g, '<br>');
-
-        res.json({ response: responseText });
+        const response = await getFoodSuggestions(userInput);
+        res.json({ response });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Failed to generate food options" });
+        console.error('Error in chat endpoint:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
-
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server listening on port ${port}`);
 });

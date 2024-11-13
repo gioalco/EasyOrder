@@ -6,7 +6,7 @@
             <li><a href="/index.php">Home</a></li>
 <!--            <li><a href="restaurant.html">Restaurant</a></li>-->
 <!--            <li><a href="order.html">Order Online</a></li>-->
-<!--            <li><a href="contact.html">Contact Us</a></li>-->
+            <li><a href="/contact.php">Contact Us</a></li>
             <li><a href="/about-us.php">About Us</a></li>
 <!--            <li><a href="/user-profile.php">Profile</a></li>-->
             <li><a href="/signin.php">Sign in / Sign up</a></li>
@@ -15,7 +15,7 @@
             <li class = "hideOnMobile"><a href="/index.php">Home</a></li>
 <!--            <li class = "hideOnMobile"><a href="restaurant.html">Restaurant</a></li>-->
 <!--            <li class = "hideOnMobile"><a href="order.html">Order Online</a></li>-->
-<!--            <li class = "hideOnMobile"><a href="contact.html">Contact Us</a></li>-->
+            <li class = "hideOnMobile"><a href="/contact.php">Contact Us</a></li>
             <li class = "hideOnMobile"><a href="/about-us.php">About Us</a></li>
 <!--            <li class = "hideOnMobile"><a href="/user-profile.php">Profile</a></li>-->
             <li class = "hideOnMobile"><a href="/signin.php">Sign in / Sign up</a></li>
