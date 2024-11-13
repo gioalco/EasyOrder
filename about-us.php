@@ -11,6 +11,10 @@
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <style>
+        #logo {
+            height: 90px;
+        }
+
         /* Basic reset */
         * {
             margin: 0;
@@ -101,7 +105,7 @@
 <body>
 <section class="background">
     <?php
-        include('components/header-public.php');
+    include('components/header-public.php');
     ?>
 
     <!-- About Us Section -->
@@ -140,7 +144,7 @@
     </section>
 </section>
 
-    <footer-component></footer-component>
+<footer-component></footer-component>
 
 </body>
 </html>

@@ -45,6 +45,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["last_regeneration"] = time();
 
         header("Location: ../user-home.php?login=success");
+//        $port = 3000;
+//        header('Location: '
+//            . ($_SERVER['HTTPS'] ? "https" : "http")
+//            . '://' . $_SERVER['HTTP_HOST'] . ':' . $port
+//           );
+//        exit;
+
         $pdo = null;
         $statement = null;
 

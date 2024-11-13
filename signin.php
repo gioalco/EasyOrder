@@ -15,6 +15,10 @@ require_once 'includes/login_view.inc.php';
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <style>
+        #logo {
+            height: 90px;
+        }
+
         /* Basic reset */
         * {
             margin: 0;
