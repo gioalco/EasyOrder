@@ -6,7 +6,7 @@ const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@googl
 const dotenv = require('dotenv').config()
 
 const app = express();
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 7000;
 app.use(express.json());
 const MODEL_NAME = "gemini-pro";
 const API_KEY = process.env.API_KEY;
@@ -88,8 +88,7 @@ async function runChat(userInput) {
 }
 
 app.get('/', (req, res) => {
-    // res.sendFile(__dirname + '/chatbot.html');
-    res.render('chatbot.ejs');
+    res.sendFile(__dirname + '/chatbot.html');
 });
 app.get('/loader.gif', (req, res) => {
     res.sendFile(__dirname + '/loader.gif');

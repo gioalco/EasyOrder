@@ -97,7 +97,7 @@ require_once 'includes/login_view.inc.php';
     <div class="column_container">
 
         <div class="column" id="chatbot">
-            <a href="http://localhost:10000" target="_blank">
+            <a href="http://localhost:7000" target="_blank">
             <h2>Try our Chatbot</h2>
             <div class="card_container">
 <!--                <img src="img/chatbot.png" onclick=toChatbot()>-->
