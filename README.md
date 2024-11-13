@@ -5,6 +5,8 @@ A Project for ITS120L - Application Development and Emerging Technologies
 In order to make this project work, you need to have the following installed:
 * PHP
 * MySQL
+* node.js
+  * dotenv
 
 ## Setting up the Database
 To make the functionality of the website work, you need to have a database with the correct tables and data. To do so, follow these steps:
@@ -16,3 +18,6 @@ To make the functionality of the website work, you need to have a database with 
 
 ## Running the Website
 In the root directory of the project, run the command: `php -S localhost:8000`
+
+## Running the Chatbot
+In the root directory of the project, run the command: `node --env-file=.env server.js`
