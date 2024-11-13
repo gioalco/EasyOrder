@@ -9,13 +9,17 @@
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <style>
+        #logo {
+            height: 90px;
+        }
+
         /* Basic reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: Arial, sans-serif;
             color: #333;
@@ -23,7 +27,7 @@
 
         /* Hero Section */
         .hero {
-            background-image: url("img/about-bg.jpg"); /* Replace with actual image */
+            background-image: url('img/restaurant.jpg'); /* Replace with actual image */
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -113,7 +117,7 @@
 
         /* Reservation Banner */
         .reservation-banner {
-            background-image: url('https://placehold.co/1920x300'); /* Replace with actual image */
+            background-image: url('img/restaurant.jpg'); /* Replace with actual image */
             background-size: cover;
             background-position: center;
             color: white;
@@ -172,77 +176,76 @@
 </head>
 <body>
 
-    <?php
-        include('components/header-public.php');
-    ?>
+<?php
+include('components/header-public.php');
+?>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div>
-            <h2></h2>
-            <p>Delicious food, just a click away.</p>
-            <a href="#" class="btn">Order Online</a>
+<!-- Hero Section -->
+<section class="hero">
+    <div>
+        <h2></h2>
+        <p>Delicious food, just a click away.</p>
+        <a href="#" class="btn">Order Online</a>
 
-            <a href="#" class="btn">View Menu</a>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Highlights Section -->
-    <section class="highlights">
-        <div class="highlight-item">
-            <img src="https://placehold.co/80" alt="Fresh Ingredients">
-            <h3>Fresh Ingredients</h3>
-            <p>Only the finest, locally sourced ingredients.</p>
-        </div>
-        <div class="highlight-item">
-            <img src="https://placehold.co/80" alt="Quick Delivery">
-            <h3>Quick Delivery</h3>
-            <p>Fast and reliable, right to your door.</p>
-        </div>
-        <div class="highlight-item">
-            <img src="https://placehold.co/80" alt="Happy Customers">
-            <h3>Customer Satisfaction</h3>
-            <p>We pride ourselves on quality and taste.</p>
-        </div>
-    </section>
+<!-- Highlights Section -->
+<section class="highlights">
+    <div class="highlight-item">
+        <img src="https://placehold.co/80" alt="Fresh Ingredients">
+        <h3>Fresh Ingredients</h3>
+        <p>Only the finest, locally sourced ingredients.</p>
+    </div>
+    <div class="highlight-item">
+        <img src="https://placehold.co/80" alt="Quick Delivery">
+        <h3>Quick Delivery</h3>
+        <p>Fast and reliable, right to your door.</p>
+    </div>
+    <div class="highlight-item">
+        <img src="https://placehold.co/80" alt="Happy Customers">
+        <h3>Customer Satisfaction</h3>
+        <p>We pride ourselves on quality and taste.</p>
+    </div>
+</section>
 
-    <!-- Menu Highlights Section -->
+<!-- Menu Highlights Section -->
 <!--    <section class="menu-highlights">-->
 <!--        <h2>Featured Dishes</h2>-->
 <!--        <p>Explore our top picks!</p>-->
 <!--        <a href="#" class="btn">View Full Menu</a>-->
 <!--    </section>-->
 
-    <!-- Reservation Banner -->
-    <section class="reservation-banner">
-        <h2>Reserve a Table for an Unforgettable Experience</h2>
-        <a href="#" class="btn">Make a Reservation</a>
-    </section>
+<!-- Reservation Banner -->
+<section class="reservation-banner">
+    <h2>Reserve a Table for an Unforgettable Experience</h2>
+    <a href="#" class="btn">Make a Reservation</a>
+</section>
 
-    <!-- Reviews Section -->
-    <section class="reviews">
-        <h2>What Our Customers Say</h2>
-        <div class="review-container">
-            <div class="review">
-                <img src="https://placehold.co/80" alt="Person">
-                <p>"The best food I've had all year!"</p>
-                <span>★★★★★</span>
-            </div>
-            <div class="review">
-                <img src="https://placehold.co/80" alt="Person">
-                <p>"Fast delivery and delicious meals!"</p>
-                <span>★★★★★</span>
-            </div>
-            <div class="review">
-                <img src="https://placehold.co/80" alt="Person">
-                <p>"A dining experience to remember!"</p>
-                <span>★★★★★</span>
-            </div>
+<!-- Reviews Section -->
+<section class="reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="review-container">
+        <div class="review">
+            <img src="https://placehold.co/80" alt="Person">
+            <p>"The best food I've had all year!"</p>
+            <span>★★★★★</span>
         </div>
-    </section>
+        <div class="review">
+            <img src="https://placehold.co/80" alt="Person">
+            <p>"Fast delivery and delicious meals!"</p>
+            <span>★★★★★</span>
+        </div>
+        <div class="review">
+            <img src="https://placehold.co/80" alt="Person">
+            <p>"A dining experience to remember!"</p>
+            <span>★★★★★</span>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer-component></footer-component>
+<!-- Footer -->
+<footer-component></footer-component>
 
 </body>
 </html>

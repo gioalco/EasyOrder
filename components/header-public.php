@@ -1,5 +1,6 @@
 <header>
-    <h1>EasyOrder Restaurant</h1>
+<!--    <h1>EasyOrder Restaurant</h1>-->
+    <img src="img/logo-transparent.png" alt="Logo" id="logo">
     <nav>
         <ul class = "sidebar">
             <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
